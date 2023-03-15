@@ -1,12 +1,55 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import React, { useState } from "react";
+import { View, Text, TextInput, SafeAreaView, Image, ScrollView } from "react-native";
+import { Ionicons, FontAwesome } from "@expo/vector-icons";
+import CategoriesList from "../../components/CategoriesList/CategoriesList";
+import friesandburger from '../../assets/friesandburger.jpg';
+import Dashboard from "../../components/DashBoard/Dashboard";
 
 const HomeScreen = () => {
+  const [value, setValue] = useState("");
   return (
-    <View>
-      <Text>HomeScreen</Text>
-    </View>
-  )
-}
+    <SafeAreaView className="bg-white flex-1 relative">
+      {/* Top section, search, menu icon  and profile icon */}
+      <View className="flex-row justify-between items-center px-6 mt-8 py-4">
+        <View>
+          <Ionicons name="ios-menu" size={30} color="#2A2B4B" />
+        </View>
+        <View className="border-2 rounded-3xl border-[#2A2B4B] flex-row justify-between items-center px-4 py-2 w-60">
+          <TextInput
+            placeholder="search"
+            value={value}
+            onChangeText={setValue}
+            className="text-sm"
+          />
+          <Ionicons name="search" size={20} color="#2A2B4B" />
+        </View>
+        <View>
+          <FontAwesome name="user-circle" size={30} color="#2A2B4B" />
+        </View>
+      </View>
 
-export default HomeScreen
+      {/* Second section, Ad */}
+      <View className="mt-8 px-6">
+         <View className="flex-row justify-around items-center bg-orange-400 border-t-4 border-r-4 border-gray-900 rounded-2xl py-1">
+            <Image source={friesandburger}
+            resizeMode="center"
+            className="w-32 h-32 rounded-full"
+            />
+            <Text className="text-4xl text-center font-bold text-gray-900 uppercase">50% off!</Text>
+         </View>
+      </View>
+
+      {/* Third section, categories in horizontal flatlist */}
+      <CategoriesList />
+
+      {/* Main section */}
+      <View className="px-6 mt-6 flex-row">
+         <Dashboard />
+         <Dashboard />
+      </View>
+
+    </SafeAreaView>
+  );
+};
+
+export default HomeScreen;

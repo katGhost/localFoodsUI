@@ -5,6 +5,7 @@ import { Ionicons } from "@expo/vector-icons";
 import CustomInput from "../../components/CustomInput/CustomInput";
 import CustomButton from "../../components/CustomButton/CustomButton";
 
+
 const WelcomeScreen = () => {
   const navigation = useNavigation();
 
@@ -21,6 +22,7 @@ const WelcomeScreen = () => {
 
   const onLoginPress = () => {
     console.warn("login Pressed");
+    navigation.navigate('Home');
   };
   const onSignUpPress = () => {
     console.warn("sign up pressed");
