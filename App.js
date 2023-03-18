@@ -13,8 +13,8 @@ export default function App() {
     <TailwindProvider>
       <NavigationContainer>
         <Stack.Navigator>
+        <Stack.Screen name="Welcome" component={WelcomeScreen} />
         <Stack.Screen name="Home" component={HomeScreen} options={{headerShown: false}} />
-          <Stack.Screen name="Welcome" component={WelcomeScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </TailwindProvider>

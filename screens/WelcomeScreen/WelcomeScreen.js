@@ -32,8 +32,8 @@ const WelcomeScreen = () => {
     <SafeAreaView className="bg-white flex-1 relative">
       {/* First Section */}
       <View className="flex-row px-6 mt-8 items-center space-x-2">
-        <View className="w-16 h-16 bg-black rounded-full items-center justify-center">
-          <Ionicons name="fast-food" size={28} color="#FB923C" />
+        <View className="w-16 h-16 bg-slate-900 rounded-full items-center justify-center">
+          <Ionicons name="fast-food" size={28} color="#94A3B8" />
         </View>
         <Text className="text-[#2A2B4B] font-semibold text-3xl">
           localfastfood
@@ -42,8 +42,8 @@ const WelcomeScreen = () => {
 
       {/* Welcome message, Second Section */}
       <View className="px-6 mt-8 space-y-3">
-        <Text className="text-6xl font-semibold text-black">Welcome Back!</Text>
-        <Text className="text-2xl font-light text-[#2A2B4B] mb-8">
+        <Text className="text-6xl font-semibold text-gray-900">Welcome Back!</Text>
+        <Text className="text-2xl font-light text-[#64748B] mb-8">
           We've missed you, now you can enjoy browsing all the best food places
           around you.
         </Text>

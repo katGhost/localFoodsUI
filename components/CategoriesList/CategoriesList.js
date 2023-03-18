@@ -11,7 +11,8 @@ const CategoriesList = () => {
       horizontal
       showsHorizontalScrollIndicator={false}
       data={list}
-      renderItem={({item}) => <CategoryItem name={item} />}
+      renderItem={({item}) => <CategoryItem data={item} index={item} />}
+      keyExtractor={(item) => item.id.toString()}
       />
     </SafeAreaView>
   )

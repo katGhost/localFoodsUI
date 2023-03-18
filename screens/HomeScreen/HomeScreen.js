@@ -1,14 +1,21 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, SafeAreaView, Image, ScrollView } from "react-native";
-import { Ionicons, FontAwesome } from "@expo/vector-icons";
+import {
+  View,
+  Text,
+  TextInput,
+  SafeAreaView,
+  Image,
+  ScrollView,
+} from "react-native";
+import { Ionicons, FontAwesome, AntDesign, SimpleLineIcons } from "@expo/vector-icons";
 import CategoriesList from "../../components/CategoriesList/CategoriesList";
-import friesandburger from '../../assets/friesandburger.jpg';
+import friesandburger from "../../assets/friesandburger.jpg";
 import Dashboard from "../../components/DashBoard/Dashboard";
 
 const HomeScreen = () => {
   const [value, setValue] = useState("");
   return (
-    <SafeAreaView className="bg-white flex-1 relative">
+    <ScrollView className="bg-white flex-1 relative">
       {/* Top section, search, menu icon  and profile icon */}
       <View className="flex-row justify-between items-center px-6 mt-8 py-4">
         <View>
@@ -30,25 +37,32 @@ const HomeScreen = () => {
 
       {/* Second section, Ad */}
       <View className="mt-8 px-6">
-         <View className="flex-row justify-around items-center bg-orange-400 border-t-4 border-r-4 border-gray-900 rounded-2xl py-1">
-            <Image source={friesandburger}
+        <View className="flex-row justify-around items-center bg-gray-900 rounded-2xl py-1">
+          <Image
+            source={friesandburger}
             resizeMode="center"
             className="w-32 h-32 rounded-full"
-            />
-            <Text className="text-4xl text-center font-bold text-gray-900 uppercase">50% off!</Text>
-         </View>
+          />
+          <Text className="text-4xl text-center font-bold text-gray-100 uppercase">
+            50% off!
+          </Text>
+        </View>
       </View>
 
       {/* Third section, categories in horizontal flatlist */}
       <CategoriesList />
 
       {/* Main section */}
-      <View className="px-6 mt-6 flex-row">
-         <Dashboard />
-         <Dashboard />
-      </View>
+      <View className="px-3 bg-gray-900 flex-1 rounded-t-2xl mt-4 pb-4">
+        <Dashboard />
 
-    </SafeAreaView>
+        <View className="flex-row justify-around bg-gray-700 rounded-xl py-4">
+          <AntDesign name="message1" size={24} color="#F1F5F9" />
+          <Text className="text-md font-medium capitalize text-gray-100"> send feedback</Text>
+          <SimpleLineIcons name="arrow-right" size={24} color="#F1F5F9" />
+        </View>
+      </View>
+    </ScrollView>
   );
 };
 
