@@ -4,7 +4,7 @@ import data from "./data";
 
 const Menu = ({ data, index }) => {
   const onButtonPress = () => {
-    console.warn("View this item");
+    console.warn("Item Pressable");
   };
 
   return (
