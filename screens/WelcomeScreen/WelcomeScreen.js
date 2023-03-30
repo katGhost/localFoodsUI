@@ -25,7 +25,7 @@ const WelcomeScreen = () => {
     navigation.navigate('Home');
   };
   const onSignUpPress = () => {
-    console.warn("sign up pressed");
+    navigation.navigate('Sign Up');
   };
 
   return (
